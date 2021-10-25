@@ -5,7 +5,7 @@
                 <h4 class="font-weight-bold">All Customers</h4>
             </div>
             <div class="col-4">
-                <a href="/addCustomer" class="btn btn-success float-right"><i class="fa fa-plus mr-1"></i>Add New</a>
+                <a href="/addEmployees" class="btn btn-success float-right"><i class="fa fa-plus mr-1"></i>Add New</a>
             </div>
         </div>
     </div>
@@ -14,18 +14,18 @@
             <thead class="table-dark">
                 <tr>
                     <th scope="col">Name</th>
-                    <th scope="col">Phone Number</th>
-                    <th scope="col">CNIC</th>
-                    <th scope="col">Actions</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Adress</th>
+                    <th scope="col">Phone</th>
                 </tr>
             </thead>
             <tbody>
-                <% if(customers.length > 0) { %>
+                <% if(employees.length > 0) { %>
                     <% for(let customer of customers) { %>
                     <tr>
-                        <th scope="row"><%= customer.firstname %> <%= customer.lastname %></th>
-                        <td><%= customer.phonenumber %></td>
-                        <td><%= customer.cnic %></td>
+                        <th scope="row"><%= employees.name %></th>
+                        <td><%= employees.Email %></td>
+                        <td><%= employees.cnic %></td>
                         <td>
                             <a href="/updateCustomer/<%= customer._id %>" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
                             <a href="/deleteCustomer/<%= customer._id %>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
@@ -33,15 +33,15 @@
                     </tr>
                     <% } %>
                 <% } else { %>            <tbody>
-                    <% if(customers.length > 0) { %>
-                        <% for(let customer of customers) { %>
+                    <% if(employees.length > 0) { %>
+                        <% for(let employees of employees) { %>
                         <tr>
-                            <th scope="row"><%= customer.firstname %> <%= customer.lastname %></th>
-                            <td><%= customer.phonenumber %></td>
-                            <td><%= customer.cnic %></td>
+                            <th scope="row"><%= employees.name %> </th>
+                            <td><%= employees.phone %></td>
+                            <td><%= employees.cnic %></td>
                             <td>
-                                <a href="/updateCustomer/<%= customer._id %>" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
-                                <a href="/deleteCustomer/<%= customer._id %>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                <a href="/updateemployees/<%= employees._id %>" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
+                                <a href="/deleteemployees/<%= employees._id %>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                         <% } %>
